@@ -1,0 +1,56 @@
+.heading-primary {
+  color: $white-color;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 1s linear;
+  }
+
+  &--sub {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1.6rem;
+    animation: moveInRight 1s linear;
+  }
+}
+
+.heading-secondary {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  display: inline-block;
+
+  background-image: linear-gradient(to right, $Light-green-100, $Medium-green-100);
+  color: transparent;
+  -webkit-background-clip: text;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    filter: drop-shadow(3rem 1rem 0.4rem rgba(#000, 0.2));
+    // text-shadow: 0.5rem 1rem 2rem rgba(#000, 0.2);
+  }
+}
+
+.heading-tertiary {
+  color: #000;
+  font-size: 1.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  text-align: left;
+  font-size: 1.6rem;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}

@@ -1,0 +1,139 @@
+.contact {
+  &__box {
+    width: 70%;
+    height: 70%;
+
+    background-image: linear-gradient(
+        105deg,
+        rgba(#fff, 0.9) 0%,
+        rgba(#fff, 0.9) 50%,
+        transparent 50%
+      ),
+      url('../../img/nat-10.jpg');
+    background-size: cover;
+    background-position: top;
+    box-shadow: 0 3rem 4rem rgba(#000, 0.15);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+  }
+  &__form {
+    width: 50%;
+    height: 100%;
+    padding: 2rem;
+    &-group {
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    &-input {
+      font-size: 1.5rem;
+      font-family: inherit;
+      color: inherit;
+
+      width: 90%;
+      padding: 1rem 2rem;
+      display: block;
+
+      border: none;
+      outline: none;
+      border-radius: 0.2rem;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s ease-in-out;
+
+      &:focus {
+        box-shadow: 0 1.5rem 3rem rgba(#000, 0.15);
+        border-bottom: 3px solid $Medium-green-100;
+        &:invalid {
+          border-bottom: 3px solid orangered;
+        }
+
+        &::-webkit-input-placeholder {
+          color: transparent;
+        }
+      }
+
+      &::-webkit-input-placeholder {
+        color: #999;
+      }
+    }
+
+    &-label {
+      display: inline-block;
+      margin-left: 2rem;
+      margin-top: 0.7rem;
+      padding: 0 1rem 0 0.2rem;
+      color: #888;
+      font-size: 1.4rem;
+      border-bottom: 1px solid $Medium-green-100;
+
+      opacity: 0;
+      transform: translateY(-4rem);
+      transition: all 0.3s ease-in;
+    }
+
+    &-input:focus + &-label {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &-radio {
+      margin-top: 2rem;
+      width: 48%;
+      padding: 0.5rem 1rem;
+      display: inline-block;
+
+      &:not(:last-child) {
+        margin-right: 0.5rem;
+      }
+
+      &--label {
+        // background-color: #fff;
+        color: #444;
+        font-size: 1.6;
+        cursor: pointer;
+        padding-left: 2rem;
+        position: relative;
+      }
+      &--input {
+        opacity: 0;
+      }
+      &--input:checked + &--label .radio-btn::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.radio-btn {
+  background-color: transparent;
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  border: 5px solid $Medium-green-100;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-2.5rem, -0.5rem);
+
+  &::after {
+    display: inline-block;
+    content: '';
+    height: 1.3rem;
+    width: 1.3rem;
+    border-radius: 50%;
+    background-color: $Dark-green-100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.2s ease-in;
+  }
+}
