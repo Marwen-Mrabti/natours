@@ -103,7 +103,12 @@
         );
       }
       &--3 {
-        background-image: linear-gradient(to right bottom, #8ce99ad5, #51cf66d7, #37b24ed5);
+        background-image: linear-gradient(
+          to right bottom,
+          #8ce99ad5,
+          #51cf66d7,
+          #37b24ed5
+        );
       }
     }
   }
@@ -146,6 +151,78 @@
       }
       &-value {
         font-size: 1.8rem;
+      }
+    }
+  }
+
+  /*************media queries****************/
+  @include respond(tab-port) {
+    // background-color: rgb(13, 84, 165);
+    width: 75%;
+    min-height: auto;
+    margin: 0 auto;
+    margin-bottom: 15rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1.5rem 4rem rgba(#000, 0.15);
+
+    &__side {
+      backface-visibility: hidden;
+      background-color: orangered;
+      width: 100%;
+      height: auto;
+      position: relative;
+      box-shadow: none;
+      border-radius: 0;
+
+      &-front {
+        background-color: #fff;
+        color: #111;
+        padding-bottom: 3rem;
+        border-radius: 0;
+      }
+
+      &-back {
+        transform: rotateY(0deg) translateY(-2.5rem);
+
+        -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+      }
+    }
+
+    &:hover &__side {
+      &-front {
+        transform: rotateY(0deg);
+      }
+      &-back {
+        transform: translateY(-2.5rem);
+      }
+    }
+
+    &__cta {
+      // background-color: rgb(201, 31, 31);
+      width: 100%;
+      height: auto;
+      padding: 2rem;
+      position: relative;
+      top: 0%;
+      left: 0;
+      transform: translate(0);
+
+      .btn {
+        width: 80%;
+        margin-top: 3rem;
+        transform: translate(0);
+      }
+      .card__price {
+        color: white;
+        transform: translate(0);
+
+        &-only {
+          font-size: 1.5rem;
+        }
+        &-value {
+          font-size: 1.8rem;
+        }
       }
     }
   }

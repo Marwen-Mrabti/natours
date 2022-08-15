@@ -12,8 +12,12 @@
   background-size: cover;
   background-position: top;
 
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 98%);
+  clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 98%);
   position: relative;
+
+  @include respond(phone) {
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+  }
 
   &__logo-box {
     position: absolute;

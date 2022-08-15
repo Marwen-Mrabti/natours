@@ -1,7 +1,7 @@
 .contact {
   &__box {
     width: 70%;
-    height: 70%;
+    // height: 70%;
 
     background-image: linear-gradient(
         105deg,
@@ -19,14 +19,42 @@
     left: 50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
+
+    @include respond(tab-land) {
+      width: 100%;
+      background-image: linear-gradient(
+          105deg,
+          rgba(#f2f2f2, 0.9) 0%,
+          rgba(#f2f2f2, 0.9) 70%,
+          transparent 70%
+        ),
+        url('../../img/nat-10.jpg');
+    }
+    @include respond(tab-port) {
+      width: 100%;
+      background-image: linear-gradient(
+          105deg,
+          rgba(#f2f2f2, 0.9) 0%,
+          rgba(#f2f2f2, 0.9) 100%
+        ),
+        url('../../img/nat-10.jpg');
+    }
   }
+
   &__form {
     width: 50%;
     height: 100%;
     padding: 2rem;
+    @include respond(tab-land) {
+      width: 70%;
+      margin: 0 auto;
+    }
+    @include respond(tab-port) {
+      width: 90%;
+      margin: 0 auto;
+    }
     &-group {
       width: 100%;
-      margin: 0 auto;
       position: relative;
     }
 

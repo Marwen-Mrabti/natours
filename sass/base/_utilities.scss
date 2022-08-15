@@ -10,15 +10,29 @@
 
 .u-mb-lg {
   margin-bottom: 8rem;
+  @include respond(tab-port) {
+    margin-bottom: 5rem;
+  }
 }
+
 .u-mt-lg {
   margin-top: 8rem;
+  @include respond(tab-port) {
+    margin-top: 5rem;
+  }
 }
+
 .u-mb-md {
   margin-bottom: 4rem;
+  @include respond(tab-port) {
+    margin-bottom: 3rem;
+  }
 }
 .u-mt-md {
   margin-top: 4rem;
+  @include respond(tab-port) {
+    margin-top: 3rem;
+  }
 }
 
 .u-mb-sm {
